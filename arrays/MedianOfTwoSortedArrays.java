@@ -9,24 +9,24 @@ public class MedianOfTwoSortedArrays {
         int m = nums1.length;
         int n = nums2.length;
         int median_index = (m + n) / 2;
-        
+
         int i = 0, j = 0;
         // this is the order we are chasing
         int count = 0;
         while (count > 0) {
-            int prev_count = count;
+            // int prev_count = count;
             if (nums2[j] >= nums1[i]) {
-                int pos_ind = runBinarySearchRecursively(nums1, nums2[j], i, m-1);
+                int pos_ind = runBinarySearchRecursively(nums1, nums2[j], i, m - 1);
                 count += pos_ind;
-                if(count >= median_index){
+                if (count >= median_index) {
                     // nums1[i+ median_index - prev_count];
                 }
                 i += pos_ind;
                 j++;
             } else {
-                int pos_ind = runBinarySearchRecursively(nums2, nums1[i], j, n-1);
+                int pos_ind = runBinarySearchRecursively(nums2, nums1[i], j, n - 1);
                 count += pos_ind;
-                if(count >= median_index){
+                if (count >= median_index) {
                     // nums2[j + median_index - prev_count];
                 }
                 j += pos_ind;

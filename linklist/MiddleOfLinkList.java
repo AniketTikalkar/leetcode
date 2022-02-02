@@ -8,7 +8,7 @@ public class MiddleOfLinkList {
         }
         return n;
     }
-re
+
     public ListNode middleNode(ListNode head) {
         int n = getLen(head);
         int m = n / 2;
