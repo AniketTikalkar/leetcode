@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
+        "linklist",
         "arrays",
-        "linklist"
+        "graph"
     ]
 }
