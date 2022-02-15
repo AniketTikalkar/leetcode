@@ -33,11 +33,10 @@ class Solution {
         // default value will be 0 so white
         int color[] = new int[n];
         for (int i = 0; i < n; i++) {
-            //if one cycle detected then break loop
-            if(hasCycle){
+            // if one cycle detected then break loop
+            if (hasCycle) {
                 break;
-            }
-            else if (color[i] == WHITE) {
+            } else if (color[i] == WHITE) {
                 hasCycle = dfs(adj, color, i);
             }
         }
