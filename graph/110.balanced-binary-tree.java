@@ -23,7 +23,6 @@ import java.util.HashMap;
  * }
  */
 class Solution {
-    // HashMap<TreeNode,Integer> map = new HashMap<>();
 
     public int[] heightBal(TreeNode root){
         int res[] = new int[2];
@@ -45,14 +44,7 @@ class Solution {
         return res;
 
     }
-    // public int fillHeight(TreeNode root){
-    //     if(root == null){
-    //         return 0;
-    //     }
-    //     int h = 
-    //     map.put(root,Math.max(fillHeight(root.left),fillHeight(root.right)) + 1);
-
-    // }
+   
     public boolean checkdiff(int a,int b){
         return Math.abs(a-b) <=1;
     }
