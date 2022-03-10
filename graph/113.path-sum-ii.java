@@ -24,32 +24,29 @@ import java.util.List;
  * }
  */
 class Solution {
-    List<List<Integer>> list = new LinkedList<>();
-    public boolean check(TreeNode root,int t,ArrayList<Integer> arr){
+    
+    public void check(TreeNode root,int t,List<Integer> arr,List<List<Integer>> list){
         if(root == null){
-            return false;
+            return ;
         }
-        arr.add(root.val);
+        arr.add(Integer.valueOf(root.val));
         if(isLeaf(root) && root.val == t){
-            list.add(arr);
-            return true;
-        }
-        boolean lt = check(root.left, t-root.val, arr);
-        arr.clear();
-        arr.add(root.val);
-        boolean rt = check(root.right, t-root.val, arr);
-        if(rt || lt){
             
-            return true;
+            list.add(new LinkedList(arr));
+            arr.remove(arr.size()-1);
+            return ;
         }
-        return false;
+        check(root.left, t-root.val, arr,list);
+        check(root.right, t-root.val, arr,list);
+       arr.remove(arr.size()-1);
     }
     public boolean isLeaf(TreeNode root){
         return root != null && root.left == null && root.right == null;
     }
     public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
-        ArrayList<Integer> arr = new ArrayList<>();
-        check(root, targetSum, arr);
+        List<Integer> arr = new LinkedList<>();
+        List<List<Integer>> list = new LinkedList<List<Integer>>();
+        check(root, targetSum, arr,list);
         return list;
     }
 }
