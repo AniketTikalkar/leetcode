@@ -42,6 +42,7 @@ class Solution {
             } else if (color[i] == WHITE) {
                 hasCycle = dfs(adj, color, i,stack);
             }
+            
         }
         return hasCycle;
     }
